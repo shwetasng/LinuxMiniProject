@@ -1,0 +1,17 @@
+name: Project auto-testing
+on:
+  push:
+    branches:
+      - main
+
+permissions: {}
+
+jobs:
+  LinuxMiniProjectTest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Linux Mini Project Test
+        run: | 
+          curl -o test/test.sh -L https://raw.githubusercontent.com/exit-zero-academy/LinuxMiniProject/main/test/test.sh
+          bash test/test.sh
