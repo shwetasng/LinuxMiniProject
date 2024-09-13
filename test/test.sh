@@ -5,7 +5,7 @@
 set -e
 
 # Check secret
-SECRET=$(head -n 1 SOLUTION | md5sum)
+SECRET=$(head -n 1 SOLUTION | xargs | md5sum)
 
 if [ "$SECRET" != "b326212055e5c61bfb292d47046215f8  -" ]
 then
